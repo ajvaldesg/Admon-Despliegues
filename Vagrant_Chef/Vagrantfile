@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
       if ! command -v wireshark >/dev/null 2>&1; then
         sudo DEBIAN_FRONTEND=noninteractive apt-get install -y wireshark
         sudo dpkg-reconfigure -f noninteractive wireshark-common
-        sudo usermod -a -G wireshark $USER
+        sudo usermod -a -G wireshark vagrant
         echo "Wireshark installed successfully."
       else
         echo "Wireshark is already installed. Version: $(wireshark --version)"
