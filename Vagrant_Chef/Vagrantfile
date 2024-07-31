@@ -34,25 +34,32 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "vm2" do |vm2|
-    vm2.vm.box = "ubuntu/focal64"
-    vm2.vm.network "forwarded_port", guest: 80, host: 8090
-    vm2.vm.network "private_network", ip: "192.168.33.20"
-    vm2.vm.provider "virtualbox" do |vb|
-      vb.gui = true
-      vb.memory = "2048"
+      vm2.vm.box = "ubuntu/focal64"
+      vm2.vm.network "forwarded_port", guest: 80, host: 8090
+      vm2.vm.network "private_network", ip: "192.168.33.20"
+      vm2.vm.provider "virtualbox" do |vb|
+        vb.gui = true
+        vb.memory = "2048"
+      end
+      vm2.vm.provision "shell", inline: <<-SHELL
+        sudo apt-get update
+        sudo apt-get install -y ubuntu-desktop
+        sudo apt-get update
+        sudo apt-get install -y ruby-full
+        # Download Chef Workstation
+        wget https://packages.chef.io/files/stable/chef-workstation/22.2.786/ubuntu/20.04/chef-workstation_22.2.786-1_amd64.deb -O chef-workstation.deb
+        # Install Chef Workstation
+        sudo dpkg -i chef-workstation.deb
+        # Clean up the downloaded package to save space
+        rm chef-workstation.deb
+        if ! command -v wireshark >/dev/null 2>&1; then
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y wireshark
+          sudo dpkg-reconfigure -f noninteractive wireshark-common
+          sudo usermod -a -G wireshark vagrant
+          echo "Wireshark installed successfully."
+        else
+          echo "Wireshark is already installed. Version: $(wireshark --version)"
+        fi
+      SHELL
     end
-    vm2.vm.provision "shell", inline: <<-SHELL
-      sudo apt-get update
-      sudo apt-get install -y ubuntu-desktop
-      sudo apt-get update
-      if ! command -v wireshark >/dev/null 2>&1; then
-        sudo DEBIAN_FRONTEND=noninteractive apt-get install -y wireshark
-        sudo dpkg-reconfigure -f noninteractive wireshark-common
-        sudo usermod -a -G wireshark vagrant
-        echo "Wireshark installed successfully."
-      else
-        echo "Wireshark is already installed. Version: $(wireshark --version)"
-      fi
-    SHELL
-  end
 end
