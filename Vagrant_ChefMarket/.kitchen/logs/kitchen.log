@@ -1,0 +1,54 @@
+E, [2024-07-14T22:25:34.658107 #8341] ERROR -- Kitchen: ------Exception-------
+E, [2024-07-14T22:25:34.659424 #8341] ERROR -- Kitchen: Class: Kitchen::ClientError
+E, [2024-07-14T22:25:34.659955 #8341] ERROR -- Kitchen: Message: Could not load the 'vagrant' driver from the load path. Please ensure that your driver is installed as a gem or included in your Gemfile if using Bundler.
+E, [2024-07-14T22:25:34.660647 #8341] ERROR -- Kitchen: ----------------------
+E, [2024-07-14T22:25:34.661103 #8341] ERROR -- Kitchen: ------Backtrace-------
+E, [2024-07-14T22:25:34.661452 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/driver.rb:48:in `rescue in for_plugin'
+E, [2024-07-14T22:25:34.661822 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/driver.rb:37:in `for_plugin'
+E, [2024-07-14T22:25:34.662114 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:234:in `new_driver'
+E, [2024-07-14T22:25:34.662400 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:247:in `new_instance'
+E, [2024-07-14T22:25:34.662912 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:142:in `block in build_instances'
+E, [2024-07-14T22:25:34.663232 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:141:in `map'
+E, [2024-07-14T22:25:34.663544 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:141:in `with_index'
+E, [2024-07-14T22:25:34.663999 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:141:in `build_instances'
+E, [2024-07-14T22:25:34.664391 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:117:in `instances'
+E, [2024-07-14T22:25:34.664833 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/command.rb:112:in `filtered_instances'
+E, [2024-07-14T22:25:34.665290 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/command.rb:142:in `parse_subcommand'
+E, [2024-07-14T22:25:34.665710 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/command/list.rb:30:in `call'
+E, [2024-07-14T22:25:34.666178 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/cli.rb:52:in `perform'
+E, [2024-07-14T22:25:34.666916 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/cli.rb:120:in `list'
+E, [2024-07-14T22:25:34.667271 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/thor/command.rb:27:in `run'
+E, [2024-07-14T22:25:34.667687 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/thor/invocation.rb:126:in `invoke_command'
+E, [2024-07-14T22:25:34.668225 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/thor.rb:369:in `dispatch'
+E, [2024-07-14T22:25:34.668564 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/thor/base.rb:444:in `start'
+E, [2024-07-14T22:25:34.668937 #8341] ERROR -- Kitchen: /usr/bin/kitchen:11:in `block in <main>'
+E, [2024-07-14T22:25:34.669256 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/errors.rb:171:in `with_friendly_errors'
+E, [2024-07-14T22:25:34.670000 #8341] ERROR -- Kitchen: /usr/bin/kitchen:11:in `<main>'
+E, [2024-07-14T22:25:34.670311 #8341] ERROR -- Kitchen: ----End Backtrace-----
+E, [2024-07-14T22:25:34.670901 #8341] ERROR -- Kitchen: ---Nested Exception---
+E, [2024-07-14T22:25:34.671392 #8341] ERROR -- Kitchen: Class: LoadError
+E, [2024-07-14T22:25:34.671748 #8341] ERROR -- Kitchen: Message: cannot load such file -- kitchen/driver/vagrant
+E, [2024-07-14T22:25:34.672232 #8341] ERROR -- Kitchen: ----------------------
+E, [2024-07-14T22:25:34.672717 #8341] ERROR -- Kitchen: ------Backtrace-------
+E, [2024-07-14T22:25:34.673250 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/driver.rb:48:in `rescue in for_plugin'
+E, [2024-07-14T22:25:34.673729 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/driver.rb:37:in `for_plugin'
+E, [2024-07-14T22:25:34.674155 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:234:in `new_driver'
+E, [2024-07-14T22:25:34.675022 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:247:in `new_instance'
+E, [2024-07-14T22:25:34.675577 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:142:in `block in build_instances'
+E, [2024-07-14T22:25:34.676122 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:141:in `map'
+E, [2024-07-14T22:25:34.676401 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:141:in `with_index'
+E, [2024-07-14T22:25:34.676768 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:141:in `build_instances'
+E, [2024-07-14T22:25:34.677092 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/config.rb:117:in `instances'
+E, [2024-07-14T22:25:34.677406 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/command.rb:112:in `filtered_instances'
+E, [2024-07-14T22:25:34.677794 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/command.rb:142:in `parse_subcommand'
+E, [2024-07-14T22:25:34.678119 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/command/list.rb:30:in `call'
+E, [2024-07-14T22:25:34.678466 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/cli.rb:52:in `perform'
+E, [2024-07-14T22:25:34.679084 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/cli.rb:120:in `list'
+E, [2024-07-14T22:25:34.679415 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/thor/command.rb:27:in `run'
+E, [2024-07-14T22:25:34.679789 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/thor/invocation.rb:126:in `invoke_command'
+E, [2024-07-14T22:25:34.680095 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/thor.rb:369:in `dispatch'
+E, [2024-07-14T22:25:34.680613 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/thor/base.rb:444:in `start'
+E, [2024-07-14T22:25:34.681126 #8341] ERROR -- Kitchen: /usr/bin/kitchen:11:in `block in <main>'
+E, [2024-07-14T22:25:34.681566 #8341] ERROR -- Kitchen: /usr/lib/ruby/vendor_ruby/kitchen/errors.rb:171:in `with_friendly_errors'
+E, [2024-07-14T22:25:34.682085 #8341] ERROR -- Kitchen: /usr/bin/kitchen:11:in `<main>'
+E, [2024-07-14T22:25:34.682708 #8341] ERROR -- Kitchen: ----End Backtrace-----

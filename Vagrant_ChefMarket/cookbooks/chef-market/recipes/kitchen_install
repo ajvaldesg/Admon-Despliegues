@@ -1,0 +1,11 @@
+# chef-market/recipes/kitchen_install.rb
+
+# Update system gems
+gem_package 'rubygems-update' do
+  action :install
+end
+
+# Install Test Kitchen
+gem_package 'test-kitchen' do
+  action :install
+end
